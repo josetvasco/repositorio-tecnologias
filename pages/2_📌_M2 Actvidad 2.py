@@ -28,7 +28,7 @@ st.markdown("""
 
 st.header("Solución")
 
-df = pd.read_csv("datasets/estudiantes_colombia.csv")
+df = pd.read_csv("static/datasets/estudiantes_colombia.csv")
 
 st.dataframe(df.iloc[0:5])
 st.dataframe(df.tail(5))
