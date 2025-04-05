@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 # Configuración de la página
 st.set_page_config(   
@@ -26,4 +27,9 @@ st.markdown("""
 """)
 
 st.header("Solución")
+
+df = pd.read_csv("datasets/estudiantes_colombia.csv")
+
+st.dataframe(df.iloc[0:5])
+st.dataframe(df.tail(5))
 
