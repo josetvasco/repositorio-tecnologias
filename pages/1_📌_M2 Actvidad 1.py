@@ -20,10 +20,9 @@ Familiarizarse con la creación de DataFrames en Pandas y mostrarlos usando Stre
 st.header("Objetivos de aprendizaje")
 
 st.markdown("""
-- Comprender los tipos de datos básicos en Python
-- Aprender a utilizar variables y operadores
-- Dominar las estructuras de datos fundamentales
-- Aplicar estos conocimientos en ejemplos prácticos
+- Identificar diferentes fuentes de datos estructurados que pueden ser transformados en un DataFram.
+- Comprender las ventajas y limitaciones de cada fuente de datos al trabajar con panda.
+- Integrar datos provenientes de diferentes fuentes en un único DataFrame cuando sea necesari.
 """)
 
 st.header("Solución")
@@ -355,7 +354,7 @@ code = """
     import streamlit as st
     import pandas as pd
     from pymongo import MongoClient
-    
+
     client = MongoClient()
 
     client = MongoClient("mongodb://localhost:27017/")
@@ -383,6 +382,3 @@ db = client["Tecnologia"]
 collection = db["usuarios"]
 
 df = pd.DataFrame(list(collection.find()))
-
-st.markdown('<h4 margin-top: 0px;">Datos desde MongoDB:</h3>', unsafe_allow_html=True)
-st.dataframe(df)
