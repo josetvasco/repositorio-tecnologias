@@ -30,6 +30,32 @@ st.header("Solución")
 
 df = pd.read_csv("static/datasets/estudiantes_colombia.csv")
 
-st.dataframe(df.iloc[0:5])
-st.dataframe(df.tail(5))
+st.markdown('<h4 margin-top: 0px;">Primeras 5 filas:</h3>', unsafe_allow_html=True)
+st.dataframe(df.head())
+
+st.markdown('<h4 margin-top: 0px;">Últimas 5 filas:</h3>', unsafe_allow_html=True)
+st.dataframe(df.tail())
+
+st.markdown('<h4 margin-top: 0px;">Columnas especificas:</h3>', unsafe_allow_html=True)
+st.dataframe(df[["nombre", "edad", "promedio"]])
+
+st.markdown('<h4 margin-top: 0px;">Por promedio:</h3>', unsafe_allow_html=True)
+min_promedio = float(df["promedio"].min())
+max_promedio = float(df["promedio"].max())
+
+# Crear slider
+umbral = st.slider(
+    "Mostrar estudiantes con promedio mayor a:",
+    min_value=min_promedio,
+    max_value=max_promedio,
+    value=min_promedio,
+    step=0.1
+)
+
+# Filtrar DataFrame
+df_filtrado = df[df["promedio"] > umbral]
+
+# Mostrar resultado
+st.write(f"Estudiantes con promedio mayor a {umbral}:")
+st.dataframe(df_filtrado)
 
