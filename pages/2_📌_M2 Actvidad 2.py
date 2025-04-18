@@ -53,12 +53,25 @@ st.code(code)
 st.dataframe(df.tail())
 
 st.markdown('<h4 margin-top: 0px;">Información del dataset:</h3>', unsafe_allow_html=True)
+code = """
+    import streamlit as st
+    import pandas as pd
+    import io
+
+    df = pd.read_csv("static/datasets/estudiantes_colombia.csv")
+
+    buffer = io.StringIO()
+    df.info(buf=buffer)
+    info_str = buffer.getvalue()
+
+    st.text(info_str)
+"""
+st.code(code)
 buffer = io.StringIO()
 df.info(buf=buffer)
 info_str = buffer.getvalue()
 
-st.subheader("Resumen con .info()")
-st.text(info_str)  # Mostrar como texto plano
+st.text(info_str)
 
 st.markdown('<h4 margin-top: 0px;">Descripción del dataset:</h3>', unsafe_allow_html=True)
 code = """
