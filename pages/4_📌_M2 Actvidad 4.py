@@ -25,7 +25,6 @@ st.markdown("""
 st.header("Solución")
 
 data = {
-    'ID': [101, 102, 103, 104, 105],
     'Nombre': ['Ana', 'Luis', 'María', 'Carlos', 'Laura'],
     'Departamento': ['Ventas', 'IT', 'Recursos Humanos', 'IT', 'Ventas'],
     'Salario': [3500, 4500, 4000, 4800, 3600]
@@ -38,7 +37,6 @@ st.subheader("Datos a trabajar")
 
 code = """
     data = {
-        'ID': [101, 102, 103, 104, 105],
         'Nombre': ['Ana', 'Luis', 'María', 'Carlos', 'Laura'],
         'Departamento': ['Ventas', 'IT', 'Recursos Humanos', 'IT', 'Ventas'],
         'Salario': [3500, 4500, 4000, 4800, 3600]
